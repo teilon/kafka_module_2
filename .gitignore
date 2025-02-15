@@ -1,3 +1,10 @@
+**/__pycache__
+
+**/simple-faust-app-data
+
+script.sql
+tmp.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -169,3 +176,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+tmp
+script.sql
+**/app/simple-faust-app-data
