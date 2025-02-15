@@ -1,20 +1,18 @@
+# запуск
 для запуска необходимо выполнить следующие шаги из корня:
 
-для запуска клостера kafka:
-    docker-compose up -d
-для запуска продюсера и консьюмера:
-    python app/main.py
-для запуска kafka-streams (faust):
-    faust -A faust_app worker --loglevel=info
+* кластер kafka: docker-compose up -d
+* продюсер и консьюмер: python app/main.py
+* kafka-streams (faust): faust -A faust_app worker --loglevel=info
 
-в проекте есть класс сообщения Message (с полями user_id: int message_id: int и title: str)
-
-продюсер каждые 5 секунд генерирует собщение Message, где
+# описание сообщения (Message)
+в проекте есть класс сообщения Message (с полями user_id: int message_id: int и title: str), где
 user_id - рандомное число от 0 до 10
 message_id - рандомное число от 0 до 10000
 title - пара двух строковых значений, разделенных дефисом, из списка ("apple", "banana", "cherry", "date", "grape", "kiwi", "lemon", "mango", "orange", "pear", "plum", "strawberry", "watermelon")
 
-продюсер отправляет сообщения в топик 'messages'
+# Логика работы
+продюсер каждые 5 секунд генерирует и отправляет сообщения в топик 'messages'
 
 faust_app реализует 3 функции агента
 * automatic_filtration - автоматическая фильтрация по user_id, агент пишет в топик 'filtered_topic' сообщения где user_id не четные
