@@ -7,6 +7,7 @@
 
 # описание сообщения (Message)
 в проекте есть класс сообщения Message (с полями user_id: int message_id: int и title: str), где
+
 user_id - рандомное число от 0 до 10
 message_id - рандомное число от 0 до 10000
 title - пара двух строковых значений, разделенных дефисом, из списка ("apple", "banana", "cherry", "date", "grape", "kiwi", "lemon", "mango", "orange", "pear", "plum", "strawberry", "watermelon")
